@@ -28,12 +28,10 @@
               </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="4">2 of 3</b-col>
-          <b-col cols="4">3 of 3</b-col>
-          <b-col cols="4">{{message}}</b-col>
+          
         </b-row>
       </b-container>
-      <b-button class="uploadButton" v-on:click="addCard">Upload Cast</b-button>
+
     </div>
     <b-button class="uploadButton mt-3" v-on:click="countData-=1">Delete Cast</b-button>
   </div>
@@ -48,17 +46,7 @@ export default {
     }
   }
 }
-new Vue({
-  el:"#card1",
-  data:{
-      message:"hi"
-  },
-  nethods:{
-    getMessage:function () {
-      return this.message
-    }
-  }
-});
+
 </script>
 
 

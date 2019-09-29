@@ -13,7 +13,8 @@
                 <b-col><b-form-text class="text-right">15 characters</b-form-text></b-col>
                </b-row>
             </b-container>
-            <b-form-input id="name" v-model="aboutData[0]['name']" v-on:keyup="emitToParent" trim></b-form-input>
+            <b-form-input id="name" v-model="aboutData[0]['name']" maxlength=15
+            v-on:keyup="emitToParent" trim></b-form-input>
           </b-form-group>
           </div>
         </div>
@@ -28,7 +29,7 @@
                 <b-col><b-form-text class="text-right">15 characters</b-form-text></b-col>
                </b-row>
             </b-container>
-            <b-form-input id="tagline" v-model="aboutData[0]['tagline']" trim v-on:keyup="emitToParent"></b-form-input>
+            <b-form-input id="tagline" v-model="aboutData[0]['tagline']" trim v-on:keyup="emitToParent" maxlength=15></b-form-input>
           </b-form-group>
           </div>
         </div>
@@ -72,6 +73,7 @@
 
 export default {
   name: 'aboutTab',
+ 
   data(){
     return{aboutData:[
       {name:'',
@@ -79,7 +81,7 @@ export default {
     }
   },
    methods: {
-    emitToParent (event) {
+    emitToParent () {
       this.$emit('childToParent', this.aboutData)
     }
   }
